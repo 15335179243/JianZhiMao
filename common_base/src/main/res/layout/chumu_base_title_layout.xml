@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.common_base.design.CommonTitle xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chumu_base_title_view"
+    android:layout_width="match_parent"
+    app:backColor="@color/popup_bg"
+    app:canBack="true"
+    app:titleText="@string/fgh_mask_bottom"
+    android:layout_height="match_parent">
+
+</com.example.common_base.design.CommonTitle>

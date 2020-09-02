@@ -1,0 +1,3 @@
+rootProject.name='JianZhiMao'
+include ':app'
+include ':common_base'

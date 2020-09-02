@@ -1,0 +1,76 @@
+<resources>
+    <style name="Theme_Transparent" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="PopupAnimaFade" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/basepopup_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/basepopup_fade_out</item>
+    </style>
+    <style name="line_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/grey_theme</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="NoAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/ToolbarColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- //沉浸状态栏-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+
+        <!--//ActionBarDrawerToggle设置颜色-->
+        <item name="colorControlNormal">@android:color/transparent</item>
+        <!--//兼容版本的沉浸式状态栏-->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar"  parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/ToolbarColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@android:color/holo_orange_dark</item>
+        <item name="android:statusBarColor">  @color/black_theme</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="DialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/sp_12</item>
+    </style>
+    <style name="popwindow_anim_style" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+    </style>
+
+    <color name="ToolbarColor">#FFFFFF</color>
+</resources>

@@ -1,0 +1,127 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion compileSdk
+
+
+    buildToolsVersion buildTools
+
+    defaultConfig {
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res',
+                    'src/main/business_res',
+                    'src/main/basepop_res'
+
+            ]
+            java.srcDirs = [
+                    'src/main/java',
+                    'src/main/business',
+                    'src/main/basepop'
+            ]
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+}
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        maven { url "https://www.jitpack.io" }
+    }
+
+}
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        maven { url "https://www.jitpack.io" }
+
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api "androidx.appcompat:appcompat:$appcompatVersion"
+    api "androidx.recyclerview:recyclerview:$recyclerviewVersion"
+    api "androidx.multidex:multidex:$multidex_version"
+    api "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
+    api "androidx.cardview:cardview:$cardViewVersion"
+    api "me.drakeet.multitype:multitype:$multitypeVersion"
+    //noinspection GradleDependency
+    api"com.google.android.material:material:$materialDesignVersion"
+
+    //butterknife
+    api "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+    //didi doraemonkit
+//    debugApi("com.didichuxing.doraemonkit:doraemonkit:$dididoraemonkitVersion") {
+//        exclude group: 'com.google.zxing'
+//    }
+//    releaseApi("com.didichuxing.doraemonkit:doraemonkit-no-op:$dididoraemonkitVersion") {
+//        exclude group: 'com.google.zxing'
+//    }
+
+//    //alibaba arouter
+//    api "com.alibaba:arouter-api:$arouterApiVersion"
+//    annotationProcessor "com.alibaba:arouter-compiler:$arouterCompilerVersion"
+    //内存泄漏检测
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanary"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanary"
+
+    //    上拉刷新下拉加载
+    api "com.scwang.smartrefresh:SmartRefreshLayout:$smartRefresh"
+    api "com.scwang.smartrefresh:SmartRefreshHeader:$smartRefresh"
+    api "org.greenrobot:eventbus:$eventbusVersion"
+
+    //    ok
+    api "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    api "com.squareup.okhttp3:logging-interceptor:$ok3log"
+
+    //    retrofit
+    api "com.squareup.retrofit2:retrofit:$retrofit2"
+    api "com.squareup.retrofit2:converter-gson:$retrofit2"
+    api "com.squareup.retrofit2:converter-jackson:$retrofit2"
+    api "com.squareup.retrofit2:adapter-rxjava2:$retrofit2"
+    api "io.reactivex.rxjava2:rxjava:$rxjava2"
+    api "io.reactivex.rxjava2:rxandroid:$rxandroid"
+    //图片压缩鲁班
+    api "top.zibin:Luban:$luban"
+    //gilde
+    api "com.github.bumptech.glide:glide:$glide"
+//    用来解析爬取html
+    api 'org.jsoup:jsoup:1.13.1'
+    //自己家的依赖
+//    api 'com.github.15335179243:ChuMuYa:v11-2.0.2-beta'
+    api 'com.chumu.magic-box:ChuMuMagicBox:v11-2.0.0'
+
+    api "com.elvishew:xlog:$xlogVersion"
+    api 'com.alibaba:fastjson:1.1.71.android'
+
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    api 'com.github.xiangtailiang:tablayout:1.0.0'
+}

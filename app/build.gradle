@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion compileSdk
+    buildToolsVersion buildTools
+//        applicationId "adb uninstall com.chumu.jianzhimao"
+    defaultConfig {
+        applicationId "com.chumu.jianzhimao"
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode appVersionCode
+        versionName appVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    implementation project(path: ':common_base')
+    api "com.jakewharton:butterknife:$butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+}
